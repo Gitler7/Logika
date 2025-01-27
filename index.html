@@ -1,64 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Реєстрація</title>
+    <title>Плани математики: Логіка</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
-            color: #fff;
+            background-color: #f9f9f9;
+            color: #333;
         }
-        .form-container {
-            max-width: 400px;
-            margin: 50px auto;
-            background-color: #252525;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
-            margin: 0 0 20px;
+        header {
+            background-color: #28a745;
+            color: white;
             text-align: center;
+            padding: 20px;
         }
-        .form-container input {
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #28a745;
+        }
+        .program ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .program ul li {
+            background: #e9ffe6;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: none;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+        footer {
             background-color: #333;
             color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
         }
-        .form-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #5a9f55;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .form-container button:hover {
-            background-color: #4d8f4a;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-
-    <div class="form-container">
-        <h2>Реєстрація</h2>
-        <form action="#" method="POST">
-            <input type="text" placeholder="Ім'я користувача" required>
-            <input type="email" placeholder="Електронна пошта" required>
-            <input type="password" placeholder="Пароль" required>
-            <button type="https://gitler7.github.io/plansi/">Зареєструватися</button>
-        </form>
+    <header>
+        <h1>Плани математики: Логіка</h1>
+        <p>Розвиток логічного мислення через математику</p>
+    </header>
+    <div class="container">
+        <section class="about">
+            <h2>Про курс</h2>
+            <p>Цей курс зосереджений на розвитку логічного мислення через вивчення математики. Ви навчитеся вирішувати задачі, аналізувати дані та розвивати структурований підхід до вирішення проблем.</p>
+        </section>
+        <section class="program">
+            <h2>План курсу</h2>
+            <ul>
+                <li><strong>Модуль 1:</strong> Основи логіки (висловлювання, істинність, таблиці істинності).</li>
+                <li><strong>Модуль 2:</strong> Логічні операції (кон'юнкція, диз'юнкція, імплікація).</li>
+                <li><strong>Модуль 3:</strong> Методи доказів (пряма, непряма, контрприклади).</li>
+                <li><strong>Модуль 4:</strong> Логіка у задачах та іграх.</li>
+                <li><strong>Модуль 5:</strong> Алгоритми та структура рішень.</li>
+                <li><strong>Модуль 6:</strong> Підсумковий проект (застосування логіки на практиці).</li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Контакти</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше ім'я" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea rows="5" placeholder="Ваше повідомлення"></textarea>
+                <button type="submit">Відправити</button>
+            </form>
+        </section>
     </div>
-
+    <footer>
+        <p>© 2025 Плани математики: Логіка. Всі права захищено.</p>
+    </footer>
 </body>
 </html>
