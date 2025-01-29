@@ -3,52 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Плани математики: Логіка</title>
+    <title>Перевірка реєстраційних номерів</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #f4f4f4;
+            text-align: center;
         }
         header {
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
-            text-align: center;
             padding: 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
+            font-size: 24px;
         }
         .container {
-            max-width: 900px;
+            max-width: 500px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
         }
-        h2 {
-            color: #28a745;
+        label {
+            font-weight: bold;
         }
-        .program ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .program ul li {
-            background: #e9ffe6;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #28a745;
-            border-radius: 5px;
-        }
-        .contact-form input, .contact-form textarea, .contact-form button {
+        input, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -56,60 +37,62 @@
             border-radius: 5px;
             font-size: 1rem;
         }
-        .contact-form button {
-            background-color: #28a745;
+        button {
+            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
         }
-        .contact-form button:hover {
-            background-color: #218838;
+        button:hover {
+            background-color: #0056b3;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        .result {
             margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
         }
-        footer p {
-            margin: 0;
+        .not-found {
+            color: red;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Плани математики: Логіка</h1>
-        <p>Розвиток логічного мислення через математику</p>
-    </header>
-    <div class="container">
-        <section class="about">
-            <h2>Про курс</h2>
-            <p>Цей курс зосереджений на розвитку логічного мислення через вивчення математики. Ви навчитеся вирішувати задачі, аналізувати дані та розвивати структурований підхід до вирішення проблем.</p>
-        </section>
-        <section class="program">
-            <h2>План курсу</h2>
-            <ul>
-                <li><strong>Модуль 1:</strong> Основи логіки (висловлювання, істинність, таблиці істинності).</li>
-                <li><strong>Модуль 2:</strong> Логічні операції (кон'юнкція, диз'юнкція, імплікація).</li>
-                <li><strong>Модуль 3:</strong> Методи доказів (пряма, непряма, контрприклади).</li>
-                <li><strong>Модуль 4:</strong> Логіка у задачах та іграх.</li>
-                <li><strong>Модуль 5:</strong> Алгоритми та структура рішень.</li>
-                <li><strong>Модуль 6:</strong> Підсумковий проект (застосування логіки на практиці).</li>
-            </ul>
-        </section>
-        <section class="contact">
-            <h2>Контакти</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Ваше ім'я" required>
-                <input type="email" placeholder="Ваш email" required>
-                <textarea rows="5" placeholder="Ваше повідомлення"></textarea>
-                <button type="submit">Відправити</button>
-            </form>
-        </section>
-    </div>
-    <footer>
-        <p>© 2025 Плани математики: Логіка. Всі права захищено.</p>
-    </footer>
+
+<header>🔍 Перевірка реєстраційних номерів</header>
+
+<div class="container">
+    <h2>Введіть номерний знак</h2>
+    <input type="text" id="licenseInput" placeholder="Наприклад: АА1234ВХ">
+    <button onclick="checkLicense()">Перевірити</button>
+    
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    // Фіктивна база даних (можна оновити)
+    const licenseDatabase = [
+        { license: "HH MS 80E", owner: "Fixssi", car: "Wolfsburg Discovery" },
+        { license: "HH PM 24", owner: "noname_noname", car: "Stuttgart Landshaft" },
+        { license: "СА7890ОР", owner: "Марія Коваленко", car: "Audi A6" }
+    ];
+
+    function checkLicense() {
+        let input = document.getElementById('licenseInput').value.trim().toUpperCase();
+        let resultDiv = document.getElementById('result');
+
+        let found = licenseDatabase.find(entry => entry.license === input);
+
+        if (found) {
+            resultDiv.innerHTML = `✅ Номер знайдено!<br> Власник: ${found.owner}<br> Авто: ${found.car}`;
+            resultDiv.classList.remove("not-found");
+        } else {
+            resultDiv.innerHTML = "❌ Номер не знайдено!";
+            resultDiv.classList.add("not-found");
+        }
+    }
+</script>
+
 </body>
 </html>
